@@ -1,0 +1,39 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">{{ delivery.customerName }}</h5>
+
+    <h6 class="card-subtitle" [ngClass]="delivery.eventType">
+      {{ delivery.eventLbl }}
+    </h6>
+
+    <small class="text-muted">
+      {{ delivery.eventTime | date: 'medium' }}
+    </small>
+    <p class="mt-2 card-text">{{ delivery.address }}</p>
+
+    <img [src]="delivery.vehicleInfo.icon" alt="vehicle type" />
+
+    <input
+      class="form-control mb-4"
+      #autocomplete
+      placeholder="Enter your address"
+      type="text"
+      [value]="delivery.address"
+    />
+
+    <span class="card-text" i18n>Vehicle type:</span>
+
+    <select
+      class="form-control"
+      (change)="onVehicleTypeChange($event.target.value)"
+    >
+      <option
+        *ngFor="let vehicle of vehicleTypes"
+        [selected]="vehicle.key === delivery.vehicleInfo.type"
+        [value]="vehicle.key"
+      >
+        {{ vehicle.label }}
+      </option>
+    </select>
+  </div>
+</div>

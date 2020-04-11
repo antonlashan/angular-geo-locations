@@ -1,0 +1,13 @@
+<ol class="breadcrumb justify-content-between">
+  <li
+    class="breadcrumb-item"
+    *ngFor="let event of timelineEvents"
+    [ngClass]="{ visited: hasVisited(event) }"
+  >
+    {{ event.label }}
+    <ng-container *ngIf="hasVisited(event)">
+      <span>✓</span>
+      <div>{{ getTimestamp(event) | date: 'medium' }}</div>
+    </ng-container>
+  </li>
+</ol>

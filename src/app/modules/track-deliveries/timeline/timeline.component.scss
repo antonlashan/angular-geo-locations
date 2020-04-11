@@ -1,0 +1,22 @@
+$breadcrumb-divider: none; // Required
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/breadcrumb';
+
+.breadcrumb-item {
+  color: #bdbdbd;
+  text-align: center;
+}
+.visited {
+  color: #28a500;
+}
+
+@include media-breakpoint-down(sm) {
+  .breadcrumb {
+    flex-direction: column;
+  }
+  .breadcrumb-item {
+    margin-bottom: 20px;
+  }
+}

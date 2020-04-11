@@ -1,0 +1,5 @@
+<div class="mb-4" *ngFor="let event of timelineEvents">
+  <h4>{{ event.label }}</h4>
+  <hr />
+  <am-deliveries [event]="event.key"></am-deliveries>
+</div>

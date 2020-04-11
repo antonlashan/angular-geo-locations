@@ -1,0 +1,33 @@
+<ng-container *ngIf="delivery">
+  <div class="row">
+    <div class="col">
+      <am-timeline [delivery]="delivery"></am-timeline>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="mb-4">
+        <am-summary
+          [delivery]="delivery"
+          (changeDelivery)="onChangeDelivery($event)"
+        ></am-summary>
+      </div>
+    </div>
+
+    <div class="col-lg">
+      <div class="mb-4">
+        <am-map [delivery]="delivery"></am-map>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<a
+  class="btn btn-primary mb-4"
+  [routerLink]="['/track-deliveries']"
+  role="button"
+  i18n
+>
+  Back
+</a>

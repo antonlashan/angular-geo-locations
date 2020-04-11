@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ delivery.customerName }}</h5>
+    <h6 class="card-subtitle" [ngClass]="delivery.eventType">
+      {{ delivery.eventLbl }}
+    </h6>
+    <small class="text-muted">{{ delivery.eventTime | date: 'medium' }}</small>
+    <p class="mt-2 card-text">{{ delivery.address }}</p>
+    <div>
+      <span class="card-text" i18n>Vehicle type:</span>
+      <span class="card-text">{{ delivery.vehicleInfo.type }}</span>
+    </div>
+    <a [routerLink]="['detail-view', delivery.id]" class="card-link" i18n>
+      Show map
+    </a>
+  </div>
+</div>
